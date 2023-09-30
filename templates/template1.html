@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Estilo para las notas aprobadas */
+        .aprobado {
+            color: green;
+        }
+
+        /* Estilo para las notas desaprobadas */
+        .desaprobado {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    {% for nota in notas %}
+        {% if nota >= 10 %}
+            <p class="aprobado">Tu nota es: {{ nota }}</p>
+        {% else %}
+            <p class="desaprobado">Tu nota es: {{ nota }}</p>
+        {% endif %}
+    {% endfor %}
+
+    <p>Hola {{ first_name }} {{ last_name }}, esta es mi primera plantilla.</p>
+    
+</body>
+</html>
