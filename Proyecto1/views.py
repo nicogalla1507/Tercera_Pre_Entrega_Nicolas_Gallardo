@@ -15,7 +15,7 @@ def hora(request):
     
     return HttpResponse(f"hola, la hora de hoy es {hoy}")
 
-def probando_template1(request):
+#def probando_template1(request):
     
     diccionario = {
         "first_name": "Nicolas",
@@ -34,3 +34,15 @@ def probando_template1(request):
     
     return HttpResponse(documento)
 
+def probando_template2(request):
+    
+    diccionario1 = {
+        "first_name": "Nicolas",
+        "last_name": "Gallardo",
+        "notas":[5,6,7,10]
+    }
+    plantilla2 = loader.get_template("template1.html")
+
+    documento2 = plantilla2.render(diccionario1)
+
+    return HttpResponse(documento2)
