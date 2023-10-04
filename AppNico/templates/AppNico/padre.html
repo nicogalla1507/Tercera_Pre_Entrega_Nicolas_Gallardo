@@ -26,8 +26,8 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#!">inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">cruso</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'inicio' %}">inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'curso' %}">curso</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">estudiantes</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">profesores</a></li>
                     </ul>
@@ -49,6 +49,15 @@
             <div class="bg-circle-4 bg-circle"></div>
         </header>
         {% block section1 %}
+
+        {%endblock%}
+
+        {% block section2 %}
+
+
+        {%endblock%}
+
+        {% block section3 %}
         
         {%endblock%}
         <!-- Footer-->

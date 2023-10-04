@@ -6,7 +6,7 @@ def inicio(request):
     return render(request,"AppNico/index.html")
 
 def curso(request):
-    return HttpResponse("Bienvenido al curso de python")
+    return render(request,"AppNico/curso.html")
 
 def estudiantes(request):
     return HttpResponse("Hola Estudiantes!")
