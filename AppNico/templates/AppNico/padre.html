@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 
-{% load static %}
+
 
 <html lang="en">
     <head>
+        {% load static %}
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
@@ -30,7 +31,8 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'curso' %}">curso</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'estudiantes' %}">estudiantes</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">registrate</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">iniciar sesion</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'appform' %}">iniciar sesion</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -61,6 +63,15 @@
         {% block section3 %}
         
         {%endblock%}
+
+        {% block section4 %}
+        
+        {%endblock%}
+
+        {% block section5 %}
+        
+        {%endblock%}
+
         <!-- Footer-->
         <footer class="py-5 bg-black">
             <div class="container px-5"><p class="m-0 text-center text-white small">Copyright &copy; Your Website 2023</p></div>
