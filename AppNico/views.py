@@ -9,9 +9,12 @@ def curso(request):
     return render(request,"AppNico/curso.html")
 
 def estudiantes(request):
-    return HttpResponse("Hola Estudiantes!")
+    return render(request,"AppNico/estudiantes.html")
 
-def profesores(request):
-    return("Hola Profesores!")
+def register(request):
+    return render(request,"AppNico/register.html")
+
+def login(request):
+    return render(request,"AppNico/login.html")
 
 
