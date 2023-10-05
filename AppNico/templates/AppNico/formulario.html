@@ -6,19 +6,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario</title>
+    <title>Document</title>
 </head>
 <body>
-    <form action="formulario/"method="POST">{% csrf_token %}
+    {% block section1 %}
+    <h1>Registro de usuario</h1>
 
-        <p>Login <input type="text" name="Login"></p>
-
-        <p>Register <input type="text" name="Register"></p>
-
-        <input type="sumbit" value="Enviar">
+    <form action=""method='POST'> {% csrf_token %}
+        
         <table>
-            {{mi_formulario.as_table}}
+
+            {{ mi_formulario.as_table }}
+
         </table>
+
+        <input type="submit" value="Enviar">
     </form>
+    {% endblock %}
 </body>
 </html>
