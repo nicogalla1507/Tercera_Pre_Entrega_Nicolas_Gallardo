@@ -19,5 +19,5 @@ class Register(models.Model):
     contrasena = models.CharField(max_length=50)
     
 class Login(models.Model):
-    email= models.CharField(max_length=50)
+    usuario= models.CharField(max_length=50)
     contrasena = models.CharField(max_length=50)

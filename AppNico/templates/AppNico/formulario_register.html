@@ -1,27 +1,28 @@
 {% extends "AppNico/padre.html" %}
 
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registrate!</title>
 </head>
 <body>
-    {% block section1 %}
-    <h1>Login</h1>
-
+    {% block section2 %}
     <form action=""method="POST"> {% csrf_token %}
-        
+
         <table>
 
-            {{ mi_formulario.as_table }}
+            {{ register_form.as_table }}
 
         </table>
 
-        <input type="submit" value="Enviar">
+        <input type="text"value="Enviar">
+        
     </form>
-    {% endblock %}
+
+    {%endblock%}
 </body>
 </html>
