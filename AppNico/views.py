@@ -56,11 +56,14 @@ def appformRegister(request):
     
     if request.method == "POST":
         
-        register_form = Register(request.POST)
+        register_form = FormularioRegister(request.POST)
         
         if register_form.is_valid():
             info = register_form.cleaned_data
-            nombre, apellido, email, contrasena = info.get("nombre","apellido","email","contrasena")
+            nombre=info.get("nombre","")
+            apellido=info.get("apellido","")
+            email=info.get("email","")
+            contrasena = info.get("contrasena","")
             
             datos = Register(nombre=info["nombre"],apellido=info["apellido"],email=info["email"],contrasena=info["contrasena"])
             datos.save()
