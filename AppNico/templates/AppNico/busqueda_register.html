@@ -1,0 +1,29 @@
+{% extends "AppNico/padre.html" %}
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busqueda de register</title>
+</head>
+<body>
+    {% block section2 %}
+    
+    <ul>
+        {% for reg in register %}
+        <li>{{ busqueda.nombre }}
+            {{ busqueda.apellido }}  
+            {{ busqueda.email }}    
+            {{ busqueda.contrasena }}      
+        </li>
+        {% endfor %}
+    </ul>
+
+
+    {% endblock %}
+</body>
+</html>

@@ -1,23 +1,27 @@
 {% extends "AppNico/padre.html" %}
 
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block section1 %}
+    <h1>Login</h1>
 
-{% block section2 %}
+    <form action=""method="POST"> {% csrf_token %}
+        
+        <table>
 
-<section id="scroll">
-    <div class="container px-5">
-        <div class="row gx-5 align-items-center">
-            <div class="col-lg-6 order-lg-2">
-                <div class="p-5"><img class="img-fluid rounded-circle" src="{% static 'AppNico/assets/img/02.jpg' %}" alt="..." /></div>
-            </div>
-            <div class="col-lg-6 order-lg-1">
-                <div class="p-5">
-                    <h2 class="display-4">Una pagina ambientada para cursos online</h2>
-                    <p></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+            {{ mi_formulario2.as_table }}
 
-{% endblock %}
+        </table>
+
+        <input type="submit" value="Enviar">
+    </form>
+    {% endblock %}
+</body>
+</html>

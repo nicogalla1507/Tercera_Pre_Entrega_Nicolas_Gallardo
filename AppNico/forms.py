@@ -9,3 +9,7 @@ class FormularioRegister(forms.Form):
     apellido = forms.CharField()
     email = forms.CharField()
     contrasena = forms.CharField()
+    
+class FormularioCurso(forms.Form):
+    nombre = forms.CharField()
+    camada = forms.CharField()

@@ -1,14 +1,33 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Login, Register
-from .forms import Formulario, FormularioRegister
+from .models import Login, Register, Curso
+from .forms import Formulario, FormularioRegister, FormularioCurso
 
 
 def inicio(request):
     return render(request,"AppNico/index.html")
 
 def curso(request):
-    return render(request,"AppNico/curso.html")
+    if request.method == "POST":
+        
+        mi_formulario2 = FormularioCurso(request.POST)
+        print(mi_formulario2)
+        
+        if mi_formulario2.is_valid():
+            informacion = mi_formulario2.cleaned_data
+            nombre = informacion.get("nombre", "")       
+            camada = informacion.get("camada", "")
+            info_curso= Curso(nombre=informacion["nombre"],camada=informacion["camada"] ) #tuve problemas en esta parte y era porque no coincidian los nombres con los modelos de la base de datos
+            info_curso.save()
+            print("VOLVIO AL INDEX")
+            return render(request,"AppNico/index.html")
+    else:
+        print("Se ejecuto el bucle else \n\n")
+        mi_formulario2 = FormularioCurso()
+        print("\n\n\nSe ejecuto el formulario")
+        
+    return render(request,"AppNico/curso.html",{"mi_formulario2":mi_formulario2})
+
 
 def estudiantes(request):
     return render(request,"AppNico/estudiantes.html")
@@ -72,7 +91,23 @@ def appformRegister(request):
         register_form = FormularioRegister()
     
     return render(request,"AppNico/formulario_register.html",{"register_form":register_form})
+
+
+def busqueda(request):
+    if request.GET["nombre"]:
+        nombre= request.GET['nombre']
         
     
+    return render(request,"AppNico/busqueda_register.html")
+    
+    
+def busquedaR(request):
+    
+    nombre= f"Buscando register {request.GET['nombre']}"
+    apellido = f"Buscando apellido {request.GET['apellido']}"
+    email = f"buscando email {request.GET['email']}"
+    contrasena = f"buscando contrasena {request.GET['contrasena']}"
+    
+    return HttpResponse(nombre,apellido,email,contrasena)
     
 

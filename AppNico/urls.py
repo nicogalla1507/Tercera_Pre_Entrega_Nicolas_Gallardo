@@ -7,7 +7,9 @@ urlpatterns = [
     path('curso/',curso, name="curso"),
     path('estudiantes/',estudiantes,name="estudiantes"),
     path('register/',appformRegister,name="register"),
-    path('appform/',appform,name="appform")
+    path('appform/',appform,name="appform"),
+    path('buscar/',busqueda,name="busqueda"),
+    path('buscarR/',busquedaR)
     
     ]
 
